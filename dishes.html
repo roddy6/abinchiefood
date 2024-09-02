@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food and Dishes</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset some default styles */
+        body, h1, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: url('https://img.freepik.com/premium-photo/food-background-set-dishes-fish-meat-vegetables-black-stone-background-top-view-free-copy-space_187166-16567.jpg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 1rem 0;
+            position: relative;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: 150px;
+            display: inline-block;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 2rem 0;
+            color: #fff;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        video, audio {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+        }
+          audio {
+  width: 300px;
+  height: 30px;
+}
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .container {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+
+            .logo {
+                width: 120px;
+            }
+
+            nav ul {
+                float: none;
+                clear: both;
+                text-align: center;
+                padding: 0;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            nav ul li a {
+                font-size: 1.1rem;
+            }
+
+            main {
+                padding: 1rem 0;
+            }
+
+            footer {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 0.5rem;
+            }
+
+            .logo {
+                width: 100px;
+            }
+
+            nav ul li a {
+                font-size: 1rem;
+            }
+
+            main {
+                padding: 0.5rem 0;
+            }
+
+            footer {
+                padding: 0.5rem;
+            }
+           
+        }
+
+        /* Dialog Box Styling */
+        .dialog {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            background: #fff;
+            color: #333;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        .dialog h2 {
+            margin-top: 0;
+        }
+
+        .dialog button {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+
+        .dialog button:hover {
+            background: #555;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="https://media.istockphoto.com/id/1183899341/vector/cartoon-chef-logo-illustration.jpg?s=2048x2048&w=is&k=20&c=telqMg8w7PgcJX45TOB-9YOnDhWKPtllyvK3M0vnNTU=" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" onclick="openDialog()">Info</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section id="home">
+                <h1>Welcome to Our Food and Dishes Website</h1>
+                <p>Explore a variety of dishes and learn about the art of cooking.</p>
+                
+                <!-- Video Section -->
+                <section>
+                    <h2>Watch Our Cooking Tutorial</h2>
+                    <iframe width="678" height="391" src="https://www.youtube.com/embed/a4uU7UZRkUc" title="Learn to Cook in 10 Easy Recipes | NYT Cooking" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </section>
+                
+                <!-- Audio Section -->
+                <section>
+                    <h2>Listen to Our Food Podcast</h2>
+                    <audio controls>
+                        <source src="https://www.bbc.co.uk/sounds/play/m0021xv1/feed.xml" type="audio">
+                        Your browser does not support the audio element.
+                    </audio>
+                </section>
+            </section>
+
+            <section id="about">
+                <h1>About Us</h1>
+                <p>In our kitchen, we craft more than just meals; we create a symphony of culture, peace, and satisfaction. Our cooking is a celebration of diverse culinary traditions, seamlessly blending rich heritage with contemporary flavors to bring you dishes that are both familiar and wonderfully new.
+                   We believe that food has the power to foster tranquility and joy. Each ingredient is thoughtfully selected, and every dish is prepared with care to ensure that it not only pleases the palate but also nourishes the soul. Our approach to cooking is rooted in the principles of harmony and balance, reflecting our commitment to creating an environment where both the ingredients and our guests find serenity and delight.
+                   Our kitchen is a sanctuary where the art of cooking meets a deep appreciation for cultural richness. We strive to provide a dining experience that transcends the ordinary, offering moments of peace and fulfillment with every bite. Through our dedication to quality and our passion for culinary excellence, we aim to leave you with a sense of satisfaction that lingers long after the meal is over.</p>
+                
+                <!-- Video Section -->
+                <section>
+                    <h2>Our Story in Video</h2>
+                    <iframe width="424" height="238" src="https://www.youtube.com/embed/d54Erbgwd4w" title="moments more ridiculous than kendall jenner cutting a cucumber | Kitchen Nightmares" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </section>
+               
+
+            <section id="contact">
+                <h1>Contact Us</h1>
+                <p>Feel free to reach out with any inquiries or feedback. If you're interested in taking one of my cooking classes, please visit my website or follow us on all social media platforms for more information and to register. 
+                   Have a question or comment? Please fill out our contact form and we'll get back to you as soon as possible.
+
+                   </p>
+                
+                <!-- Video Section -->
+                <section>
+                    <h2>How to Reach Us</h2>
+                    <p>Feel free to leave a comment or send me a DM on Instagram if you have any questions or want to share your thoughts. You can email me directly at [email protected] If you're interested in taking one of my cooking classes, please visit my website for more information and to register.
+
+
+                </section>
+                
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Food and Dishes Website</p>
+            <a href="https://commons.wikimedia.org/wiki/File:2023_Facebook_icon.svg">
+<a href="https://commons.wikimedia.org/wiki/File:Facebook_Logo_2023.png" target="_blank">Facebook</a>
+<a href="https://commons.wikimedia.org/wiki/File:Instagram_logo_2016.svg" target="_blank">Instagram</a>
+<a href="https://commons.wikimedia.org/wiki/File:Linkedin_icon.svg" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+
+    <!-- Dialog Box -->
+    <div class="overlay" id="overlay"></div>
+    <div class="dialog" id="dialog">
+        <h2>Website Information</h2>
+        <p>This website is dedicated to showcasing a variety of dishes and providing culinary insights through videos and podcasts.</p>
+        <button onclick="closeDialog()">Close</button>
+    </div>
+
+    <script>
+        function openDialog() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('dialog').style.display = 'block';
+        }
+
+        function closeDialog() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('dialog').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
