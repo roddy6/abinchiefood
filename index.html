@@ -7,7 +7,6 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset some default styles */
         body, h1, p, ul, li {
             margin: 0;
             padding: 0;
@@ -17,26 +16,39 @@
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: url('https://img.freepik.com/premium-photo/food-background-set-dishes-fish-meat-vegetables-black-stone-background-top-view-free-copy-space_187166-16567.jpg') no-repeat center center fixed;
-            background-size: cover;
             text-align: center;
+           
         }
+         
+h1, h2 {
+    color: #000; 
+}
 
+        /* Background Video Styling */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+       
         header {
             background: rgba(0, 0, 0, 0.6);
             color: #fff;
-            padding: 1rem 0;
-            position: relative;
+            padding: 1rem;
         }
 
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .logo {
             width: 150px;
-            display: inline-block;
         }
 
         nav ul {
@@ -53,13 +65,19 @@
         nav ul li a {
             color: #fff;
             text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff6347;
+            text-decoration: underline;
         }
 
         main {
             padding: 2rem 0;
             color: #fff;
         }
-
+    
         footer {
             background: rgba(0, 0, 0, 0.6);
             color: #fff;
@@ -78,26 +96,61 @@
             height: 30px;
         }
 
-        /* Responsive Styles */
+        .image-section {
+            padding: 2rem 0;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .image-section .image-description {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .social-media {
+            margin-top: 1rem;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .social-media img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-media img:hover {
+            opacity: 0.8;
+        }
+
         @media (max-width: 1024px) {
             .container {
                 width: 90%;
             }
-        }
 
-        @media (max-width: 768px) {
-            header {
-                padding: 1rem;
+            nav ul li {
+                margin-left: 10px;
             }
 
             .logo {
                 width: 120px;
             }
+        }
 
+        @media (max-width: 768px) {
             nav ul {
-                float: none;
-                clear: both;
                 text-align: center;
+                float: none;
                 padding: 0;
             }
 
@@ -110,12 +163,25 @@
                 font-size: 1.1rem;
             }
 
+            .logo {
+                width: 100px;
+            }
+
             main {
                 padding: 1rem 0;
             }
 
             footer {
                 padding: 1rem;
+            }
+
+            .social-media {
+                margin-top: 0.5rem;
+            }
+
+            .social-media img {
+                width: 20px;
+                height: 20px;
             }
         }
 
@@ -125,25 +191,25 @@
                 font-size: 1.5rem;
             }
 
-            .logo {
-                width: 100px;
-            }
-
             nav ul li a {
                 font-size: 1rem;
             }
 
-            main {
-                padding: 0.5rem 0;
+            .image-section .image-description {
+                font-size: 0.9rem;
             }
 
             footer {
                 padding: 0.5rem;
                 font-size: 0.8rem;
             }
+
+            .social-media img {
+                width: 18px;
+                height: 18px;
+            }
         }
 
-        /* Dialog Box Styling */
         .dialog {
             display: none;
             position: fixed;
@@ -188,9 +254,56 @@
             background: rgba(0,0,0,0.7);
             z-index: 999;
         }
+
+        .sidebar {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 200px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 1rem;
+            box-shadow: -4px 0 8px rgba(0,0,0,0.5);
+            display: none;
+            z-index: 1001;
+        }
+
+        .sidebar button {
+            background: #444;
+            color: #fff;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            width: 100%;
+        }
+
+        .sidebar button:hover {
+            background: #666;
+        }
+
+        .sidebar-toggle {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1001;
+        }
     </style>
 </head>
 <body>
+    <video class="background-video" autoplay muted loop>
+        <source src="https://cdn.pixabay.com/video/2024/08/18/227137_large.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <header>
         <div class="container">
             <img src="https://media.istockphoto.com/id/1183899341/vector/cartoon-chef-logo-illustration.jpg?s=2048x2048&w=is&k=20&c=telqMg8w7PgcJX45TOB-9YOnDhWKPtllyvK3M0vnNTU=" alt="Logo" class="logo">
@@ -199,7 +312,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" onclick="openDialog()">Info</a></li>
+                    <li><a href="#" onclick="openDialog()">Info</a></li> 
                 </ul>
             </nav>
         </div>
@@ -234,44 +347,69 @@
                 </section>
             </section>
 
+
+                <!-- Image Section -->
+                <section class="image-section">
+                    <h1>Featured Dish</h1>
+                    <img src="https://media.istockphoto.com/id/688602226/photo/jollof-rice-with-chicken-and-plantains.jpg?s=1024x1024&w=is&k=20&c=valjK2nmuEkofCaJrSh1n9Fpc98-OsTf3-H629ozurI=" alt="Featured Dish">
+                    <div class="image-description">
+                        <p>This is a delicious dish that represents our commitment to quality and flavor. Jollof rice is a popular West African dish made with rice, tomatoes, onions, bell peppers, and spices like bouillon cubes, thyme, and curry powder. It is often served with chicken, fish, or beef, and can be accompanied by a side salad or plantains. Jollof rice is known for its vibrant colors and savory flavor, and it is a staple dish in many West African countries. The fresh ingredients and expert preparation make it a standout item on our menu. Enjoy the vibrant colors and textures that make this dish a visual and culinary delight.</p>
+                    </div>
+
             <section id="contact">
                 <h1>Contact Us</h1>
                 <p>Feel free to reach out with any inquiries or feedback. If you're interested in taking one of my cooking classes, please visit my website or follow us on all social media platforms for more information and to register. Have a question or comment? Please fill out our contact form and we'll get back to you as soon as possible.</p>
                 
-                <!-- Video Section -->
-                <section>
-                    <h2>How to Reach Us</h2>
-                    <p>Feel free to leave a comment or send me a DM on Instagram if you have any questions or want to share your thoughts. You can email me directly at [email protected] If you're interested in taking one of my cooking classes, please visit my website for more information and to register.</p>
+               
                 </section>
             </section>
         </div>
     </main>
     <footer>
         <div class="container">
-            <p>&copy; 2024 Food and Dishes Website</p>
-            <a href="https://commons.wikimedia.org/wiki/File:Facebook_Logo_2023.png" target="_blank">Facebook</a>
-            <a href="https://commons.wikimedia.org/wiki/File:Instagram_logo_2016.svg" target="_blank">Instagram</a>
-            <a href="https://commons.wikimedia.org/wiki/File:Linkedin_icon.svg" target="_blank">LinkedIn</a>
+            <p>&copy; 2024 Food and Dishes. All Rights Reserved.</p>
+            <div class="social-media">
+                <a href="https://facebook.com" target="_blank" class="social-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                </a>
+                <a href="https://instagram.com" target="_blank" class="social-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                </a> 
+            </div>
         </div>
     </footer>
-
-    <!-- Dialog Box -->
     <div class="overlay" id="overlay"></div>
     <div class="dialog" id="dialog">
-        <h2>Website Information</h2>
-        <p>This website is dedicated to showcasing a variety of dishes and providing culinary insights through videos and podcasts.</p>
+        <h2>Food Information</h2>
+        <p>Welcome to our culinary journey! Here, we celebrate the rich and diverse world of food. Our focus is on creating dishes that not only satisfy the palate but also provide a delightful experience. We emphasize the use of fresh, high-quality ingredients and time-tested techniques to bring out the best in each dish. Whether it's a traditional recipe or a modern twist, our aim is to offer flavors that are both exciting and comforting. Dive into the world of our carefully curated recipes and enjoy the artistry of cooking that combines passion, tradition, and creativity.</p>
         <button onclick="closeDialog()">Close</button>
     </div>
-
+    <div class="sidebar" id="sidebar">
+        <button onclick="toggleSection('home')"> Home</button>
+        <button onclick="toggleSection('about')"> About</button>
+        <button onclick="toggleSection('contact')"> Contact</button>
+    </div>
+    <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+    
     <script>
         function openDialog() {
-            document.getElementById('overlay').style.display = 'block';
             document.getElementById('dialog').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
         }
 
         function closeDialog() {
-            document.getElementById('overlay').style.display = 'none';
             document.getElementById('dialog').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.style.display = (sidebar.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.style.display = (section.style.display === 'none') ? 'block' : 'none';
         }
     </script>
 </body>
